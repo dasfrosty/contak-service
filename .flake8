@@ -1,0 +1,6 @@
+[flake8]
+# Ignore conflicts with black
+ignore = E501
+
+exclude =
+    scratch,
