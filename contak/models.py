@@ -11,4 +11,4 @@ class Contact(TimeStampedModel):
         ordering = ["last_name", "first_name", "id"]
 
     def __str__(self) -> str:
-        return f"{self.name}"
+        return f"{self.last_name}, {self.first_name}"
