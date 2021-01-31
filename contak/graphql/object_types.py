@@ -13,4 +13,12 @@ class User(DjangoObjectType):
 class Contact(DjangoObjectType):
     class Meta:
         model = models.Contact
-        fields = ["id", "first_name", "last_name", "created", "modified"]
+        fields = [
+            "id",
+            "first_name",
+            "last_name",
+            "note",
+            "user",
+            "created",
+            "modified",
+        ]
