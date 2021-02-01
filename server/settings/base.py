@@ -48,6 +48,11 @@ class BaseSettings(Configuration):
         "django.middleware.clickjacking.XFrameOptionsMiddleware",
     ]
 
+    AUTHENTICATION_BACKENDS = [
+        "graphql_jwt.backends.JSONWebTokenBackend",
+        "django.contrib.auth.backends.ModelBackend",
+    ]
+
     ROOT_URLCONF = "server.urls"
 
     TEMPLATES = [
@@ -81,7 +86,12 @@ class BaseSettings(Configuration):
         }
     }
 
-    GRAPHENE = {"SCHEMA": "contak.schema.schema"}
+    GRAPHENE = {
+        "SCHEMA": "contak.schema.schema",
+        "MIDDLEWARE": [
+            "graphql_jwt.middleware.JSONWebTokenMiddleware",
+        ],
+    }
 
     REST_FRAMEWORK = {
         # Use Django's standard `django.contrib.auth` permissions,

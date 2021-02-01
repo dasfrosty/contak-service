@@ -1,6 +1,16 @@
-import graphene as g
+from graphene import ObjectType, Schema
 
-from contak.graphql.queries import Query
+from contak.auth.mutations import Mutation as AuthMutation
+from contak.auth.queries import Query as AuthQuery
+from contak.graphql.queries import Query as ContakQuery
 
 
-schema = g.Schema(query=Query)
+class Query(AuthQuery, ContakQuery, ObjectType):
+    pass
+
+
+class Mutation(AuthMutation, ObjectType):
+    pass
+
+
+schema = Schema(query=Query, mutation=Mutation)
