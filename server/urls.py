@@ -9,4 +9,5 @@ urlpatterns = [
     path("", RedirectView.as_view(url="/contak/")),
     path("admin/", admin.site.urls),
     path("contak/", include("contak.urls")),
+    path("webhooks/", include("webhooks.urls")),
 ]
