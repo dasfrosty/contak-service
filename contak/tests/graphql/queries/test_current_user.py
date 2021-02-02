@@ -21,8 +21,8 @@ class TestCurrentUserQuery(GraphqlTestCase):
         self.assertEqual(result.data, expected_data)
 
     def test_current_user_is_not_none(self):
-        self.user = UserFactory()
-        self.client.authenticate(self.user)
+        user = UserFactory()
+        self.client.authenticate(user)
 
         query = """
             query currentUser {
@@ -36,9 +36,9 @@ class TestCurrentUserQuery(GraphqlTestCase):
 
         expected_data = {
             "currentUser": {
-                "id": str(self.user.id),
-                "username": self.user.username,
-                "email": self.user.email,
+                "id": str(user.id),
+                "username": user.username,
+                "email": user.email,
             }
         }
 
