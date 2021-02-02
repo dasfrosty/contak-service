@@ -36,6 +36,7 @@ class BaseSettings(Configuration):
         "django_filters",
         "rest_framework",
         "contak.apps.ContakAppConfig",
+        "webhooks.apps.WebhooksAppConfig",
     ]
 
     MIDDLEWARE = [
