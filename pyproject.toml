@@ -26,6 +26,7 @@ django-graphql-jwt = "^0.3.1"
 black = "^20.8b1"
 flake8 = "^3.8.4"
 mypy = "^0.800"
+factory-boy = "^3.2.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
